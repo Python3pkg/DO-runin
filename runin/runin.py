@@ -1,12 +1,12 @@
 #!/usr/bin/env python
-from __future__ import print_function
+
 
 import os
 import subprocess
 import argparse
 import uuid
 import sys
-import runin.DO as DO
+from . import runin.DO as DO
 
 DEFAULT_IMAGE = "ubuntu-16-04-x64"
 

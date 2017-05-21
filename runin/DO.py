@@ -1,4 +1,4 @@
-from __future__ import print_function
+
 input = raw_input if hasattr(__builtins__, "raw_input") else input
 import requests
 import time
@@ -32,12 +32,12 @@ def get_token_from_file():
 
 def get_token():
     try:
-        return os.getenv("DO_TOKEN") or get_token_from_file() or input(os.path.expanduser(
+        return os.getenv("DO_TOKEN") or get_token_from_file() or eval(input(os.path.expanduser(
 """Please set your DigitalOcean personal access token as either:
 * $DO_TOKEN
 * ~/.DO-token
 * or enter it below as a temporary measure
-Use Ctrl-C to exit : """))
+Use Ctrl-C to exit : """)))
     except KeyboardInterrupt:
         print(file=sys.stderr)
         sys.exit(130)
